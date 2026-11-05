@@ -10,7 +10,6 @@
 export default Navbar
 
 // topic - data handling -- state and props
-
 // function Navbar(props){
 //     return(
 //         <div style={{backgroundColor: 'black' , color: 'white',padding: '10px'}}>
