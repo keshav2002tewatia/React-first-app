@@ -164,29 +164,118 @@ import './App.css';
 //                   </div>
 //                 )
 //               }
-              export default App;
+              // export default App;
 
 
-function App () {
-  const [isFollowing, setIsFollowing] = useState(false);
-  const toggleFollow = () => {
-    setIsFollowing(!isFollowing);
-  }
-  return (
-    <div className="App" style={{marginTop: '50px'}}>
-      <h2>Instagram Profile</h2>
-      <h3>@keshav tewatia</h3>
-      <button onClick={toggleFollow}
-      style={{
-        backgroundColor: isFollowing ? 'black' : '0095f6',
-        color: isFollowing ? 'green' : 'red',
-        padding: '10px 20px',
-        border:'none',
-        borderRadius: '5px',
-        cursor: 'pointer',
-        fontWeight: 'bold'
-      }}>
-      {isFollowing ? "Following" : "Follow"}</button>
+// function App () {
+//   const [isFollowing, setIsFollowing] = useState(false);
+//   const toggleFollow = () => {
+//     setIsFollowing(!isFollowing);
+//   }
+//   return (
+//     <div className="App" style={{marginTop: '50px'}}>
+//       <h2>Instagram Profile</h2>
+//       <h3>@keshav tewatia</h3>
+//       <button onClick={toggleFollow}
+//       style={{
+//         backgroundColor: isFollowing ? 'black' : '0095f6',
+//         color: isFollowing ? 'green' : 'red',
+//         padding: '10px 20px',
+//         border:'none',
+//         borderRadius: '5px',
+//         cursor: 'pointer',
+//         fontWeight: 'bold'
+//       }}>
+//       {isFollowing ? "Following" : "Follow"}</button>
+//     </div>
+//   )
+// }
+
+
+//  dark mode Project
+
+// function App(){
+//   const[isDarkMode, setIsDarkMode] = useState(false)
+//   const toggleTheme = () => {
+//     setIsDarkMode(!isDarkMode)
+//   }
+//   return(
+//     <div tyle={{
+//       backgroundColor: isDarkMode ? '#121212' : '#ffffff', // Kala ya Safed
+//       color: isDarkMode ? '#ffffff' : '#000000',           // Text Safed ya Kala
+//       minHeight: '100vh',                                  // Poori screen cover karne ke liye
+//       display: 'flex',
+//       flexDirection: 'column',
+//       justifyContent: 'center',
+//       alignItems: 'center',
+//       transition: 'all 0.3s ease'                          // Smooth change ke liye
+//     }}>
+//       <h1>{isDarkMode ? 'Dark Mode ON 🌙' : 'Light Mode ON ☀️'}</h1>
+//       <button onClick={toggleTheme}
+//         style={{
+//           padding: '10px 20px',
+//           fontSize: '16px',
+//           cursor: 'pointer',
+//           backgroundColor: isDarkMode ? '#ffffff' : '#000000',
+//           color: isDarkMode ? '#000000' : '#ffffff',
+//           border: 'none',
+//           borderRadius: '5px',
+//           marginTop: '20px'
+//         }}>Switch to {isDarkMode ? 'Light' : 'Dark'} Mode</button>
+//     </div>
+//   )
+// }
+// export default App;
+
+//  topic- props
+
+// function UserCard(props){
+//   return(
+//     <div style={{
+//       border: '2px solid #0095f6',
+//       margin:'10px',
+//       padding: '10px',
+//       borderRadius: '8px'
+//     }}> <h2>Name : {props.name}</h2>
+//     <p>Work:{props.role}</p></div>
+//   )
+// }
+// function App(){
+//   return(
+//   <div style={{padding:'30px'}}>
+//     <h1>IT Company Team</h1>
+//     <UserCard name ="Keshav Tewatia" role="React Developer" />
+//     <UserCard name ="Rahul Sharma" role="Backend Deveeloper" />
+//     <UserCard name ="Priya singh" role="UI/UX Designer" />
+//       </div>
+//   )
+// }
+// export default App;
+
+// 2 exapmle
+function MainCard(probb){
+  return(
+    <div style={{
+      border:'2px solid blue',
+      padding: '8px',
+margin:'8px',
+borderRadius: '8px',
+backgroundColor:' black'
+    }}>
+      <h4 style={{color:'yellow'}}>Name:{probb.name}</h4>
+      <p style={{color:'yellow'}}>Work:{probb.work}</p>
     </div>
   )
 }
+function App(){
+  return(
+    <div style={{padding:'30px'}}>
+      <h3 style={{textAlign:'center', color:'red'}}>DEVELOPER NAME AND WORK</h3>
+      <MainCard name="Ashavni Singh" work="UI/IX Designer"/>
+      <MainCard name="Ritu Gupta" work="Backend Developer"/>
+      <MainCard name="Shalu Sharma" work="Software Developer"/>
+      <MainCard name="Anjali Dubey" work="Full Stack Developer"/>
+          </div>
+  )
+}
+export default App;
