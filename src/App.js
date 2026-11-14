@@ -253,29 +253,64 @@ import './App.css';
 // export default App;
 
 // 2 exapmle
-function MainCard(probb){
+// function MainCard(probb){
+//   return(
+//     <div style={{
+//       border:'2px solid blue',
+//       padding: '8px',
+// margin:'8px',
+// borderRadius: '8px',
+// backgroundColor:' black'
+//     }}>
+//       <h4 style={{color:'yellow'}}>Name:{probb.name}</h4>
+//       <p style={{color:'yellow'}}>Work:{probb.work}</p>
+//     </div>
+//   )
+// }
+// function App(){
+//   return(
+//     <div style={{padding:'30px'}}>
+//       <h3 style={{textAlign:'center', color:'red'}}>DEVELOPER NAME AND WORK</h3>
+//       <MainCard name="Ashavni Singh" work="UI/IX Designer"/>
+//       <MainCard name="Ritu Gupta" work="Backend Developer"/>
+//       <MainCard name="Shalu Sharma" work="Software Developer"/>
+//       <MainCard name="Anjali Dubey" work="Full Stack Developer"/>
+//           </div>
+//   )
+// }
+// export default App;
+
+// props destrucuriing
+
+function MainCard({name, work, id }){
   return(
-    <div style={{
-      border:'2px solid blue',
-      padding: '8px',
-margin:'8px',
-borderRadius: '8px',
-backgroundColor:' black'
-    }}>
-      <h4 style={{color:'yellow'}}>Name:{probb.name}</h4>
-      <p style={{color:'yellow'}}>Work:{probb.work}</p>
+    <div className="border-2 border-blue-500 m-4 p-4 rounded-xl shadow-lg bg-gray-50"
+    >
+      <h4 style={{color:'red'}}>Name:{name}</h4>
+      <p style={{color:'red'}}>Work:{work}</p>
+      <p style={{color:'red'}}>ID:{id}</p>
     </div>
   )
 }
 function App(){
+  const teamData = [
+    {id:1034, name: "Ashavni Singh", work: "UI/UX Designer"},
+    {id:2234, name: "Ritu Gupta", work: "Backend Developer"},
+    {id:3076, name: "Shalu Sharma", work: "Software Developer"},
+    { id:4455, name: "Anjali Dubey", work: "Full Stack Developer"},
+    { id:5048, name: "Anjali Mehta", work: "Java Script Expert"}
+  ]
   return(
-    <div style={{padding:'30px'}}>
-      <h3 style={{textAlign:'center', color:'red'}}>DEVELOPER NAME AND WORK</h3>
-      <MainCard name="Ashavni Singh" work="UI/IX Designer"/>
-      <MainCard name="Ritu Gupta" work="Backend Developer"/>
-      <MainCard name="Shalu Sharma" work="Software Developer"/>
-      <MainCard name="Anjali Dubey" work="Full Stack Developer"/>
-          </div>
+    <div style={{padding: '30px'}}>
+      <h3 className="bg-red-600 text-white p-4 font-bold text-center">DEVELOPER NAME AND WORK</h3>
+      {teamData.map((person)=>(
+        <MainCard
+        key={person.id}
+        id={person.id}
+        name={person.name}
+        work={person.work}/>
+      ))}
+    </div>
   )
 }
 export default App;
